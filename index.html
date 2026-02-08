@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Japan Pulmonary Research Network | JPRN</title>
+  <meta name="description" content="Japan Pulmonary Research Network (JPRN)は、呼吸器疾患の基礎・臨床研究を推進する若手研究者コミュニティです。研究実績、参加施設、運営メンバー、最新情報を紹介します。">
+  <meta name="keywords" content="JPRN, Japan Pulmonary Research Network, 呼吸器内科, 呼吸器疾患, ARDS, ILD, 研究ネットワーク, 臨床研究, 基礎研究">
+  <meta property="og:title" content="Japan Pulmonary Research Network | JPRN">
+  <meta property="og:description" content="呼吸器疾患の基礎・臨床研究を推進するネットワーク。研究実績、参加施設、最新情報を掲載。">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:image" content="https://example.com/image/JPRN_logo_wide.jpg">
+  <meta property="og:url" content="https://example.com/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f7f8fb;
+      --panel: #ffffff;
+      --text: #111827;
+      --muted: #4b5563;
+      --accent: #2563eb;
+      --accent-2: #0ea5e9;
+      --border: #e5e7eb;
+      --shadow: 0 20px 60px rgba(17, 24, 39, 0.08);
+      --radius: 14px;
+      --max-width: 1100px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Manrope","Noto Sans JP", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-2); }
+    header.topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255,255,255,0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .topbar-inner {
+      margin: 0 auto;
+      max-width: var(--max-width);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.85rem 1.5rem;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      margin: 0;
+      padding: 0;
+      font-size: 0.95rem;
+    }
+    nav a { color: var(--text); font-weight: 600; }
+    nav a:hover { color: var(--accent); }
+    .hero {
+      background: radial-gradient(circle at 20% 20%, rgba(37,99,235,0.08), transparent 30%),
+                  radial-gradient(circle at 80% 10%, rgba(14,165,233,0.12), transparent 32%),
+                  linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+      border-bottom: 1px solid var(--border);
+      box-shadow: inset 0 -1px 0 var(--border);
+    }
+    .hero-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 3rem 1.5rem 2.5rem;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 2rem;
+      align-items: center;
+    }
+    .hero h1 { font-size: clamp(1.9rem, 3vw, 2.4rem); margin: 0 0 0.6rem; }
+    .hero p { color: var(--muted); margin: 0 0 1rem; }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #e0ecff;
+      color: #1d4ed8;
+      border-radius: 999px;
+      padding: 0.35rem 0.75rem;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.2px;
+    }
+    .cta {
+      margin-top: 1rem;
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .btn {
+      border-radius: 999px;
+      padding: 0.65rem 1.1rem;
+      font-weight: 700;
+      border: 1px solid transparent;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      box-shadow: var(--shadow);
+    }
+    .btn.primary { background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%); color: #fff; }
+    .btn.secondary { background: #fff; border-color: var(--border); color: var(--text); }
+    .hero figure {
+      margin: 0;
+      background: #fff;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .hero img { width: 100%; display: block; }
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2rem 1.5rem 3rem;
+      display: grid;
+      gap: 1.5rem;
+    }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.4rem 1.25rem;
+      box-shadow: var(--shadow);
+    }
+    .panel h2 { margin-top: 0; margin-bottom: 0.75rem; }
+    .section-grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+    .list-condensed li { margin: 0.3rem 0; }
+    .muted { color: var(--muted); font-size: 0.95rem; }
+    .legacy { border: 1px dashed var(--border); background: #fafafa; padding: 1rem 1rem 0.2rem; border-radius: var(--radius); }
+    .legacy h2, .legacy h3 { scroll-margin-top: 80px; }
+    footer {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1.5rem;
+      color: var(--muted);
+    }
+    @media (max-width: 880px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      nav ul { gap: 0.6rem; flex-wrap: wrap; }
+      .topbar-inner { flex-direction: column; align-items: flex-start; gap: 0.4rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">JPRN | Japan Pulmonary Research Network</div>
+      <nav aria-label="Global">
+        <ul>
+          <li><a href="#about-us">About</a></li>
+          <li><a href="#news">News</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#institutions">Institutions</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <span class="chip">呼吸器疾患 × 研究ネットワーク</span>
+        <h1>日本呼吸器疾患研究ネットワーク<br>Japan Pulmonary Research Network (JPRN)</h1>
+        <p>呼吸器疾患の基礎・臨床研究を橋渡しし、若手研究者が協働するためのオープンプラットフォーム。ベンチからベッドサイドへ、国内外の施設と連携して研究を推進します。</p>
+        <div class="cta">
+          <a class="btn primary" href="mailto:syamamoto4@wisc.edu">お問い合わせ</a>
+          <a class="btn secondary" href="#about-us">概要を見る</a>
+        </div>
+      </div>
+      <figure>
+        <img src="./image/JPRN_logo_wide.jpg" alt="Japan Pulmonary Research Network logo">
+      </figure>
+    </div>
+  </section>
+
+  <main>
+    <div class="panel" id="about-us">
+      <h2>概要</h2>
+      <p>呼吸器疾患は世界の主要死因の一部を占め、基礎・臨床・データサイエンスが連携することで患者の健康寿命とQoLを改善できます。JPRNは2023年に結成され、国内外の研究者が参加する開かれた研究ネットワークです。２週間に1回のリサーチミーティング、競争的研究費獲得、研究計画立案と実行支援を通じて、最新知見の社会実装を目指します。</p>
+      <ul class="list-condensed">
+        <li><strong>目的:</strong> 呼吸器疾患研究の発展と患者の健康寿命・QoL改善</li>
+        <li><strong>活動:</strong> 定例ミーティング、共同研究設計、オープンなアップデート</li>
+        <li><strong>特徴:</strong> GitHubを活用した透明性の高いプラットフォーム</li>
+      </ul>
+    </div>
+
+    <div class="section-grid" id="news">
+      <div class="panel">
+        <h2>お知らせ</h2>
+        <ul class="list-condensed">
+          <li><strong>2025年3月:</strong> GitHub リポジトリを公開しました。</li>
+        </ul>
+      </div>
+      <div class="panel" id="contact">
+        <h2>Contact</h2>
+        <p class="muted">基礎・橋渡し・臨床研究の相談、オンラインミーティング見学、企業からの問い合わせはメールでご連絡ください。</p>
+        <p><a class="btn primary" href="mailto:syamamoto4@wisc.edu">syamamoto4@wisc.edu</a></p>
+      </div>
+    </div>
+
+    <div class="section-grid">
+      <div class="panel">
+        <h2 id="運営">運営</h2>
+        <ul class="list-condensed">
+          <li><strong>山本章太</strong>（Principal Director）</li>
+          <li><strong>今井亮介</strong>（Director：疫学・臨床研究担当）</li>
+          <li><strong>新津敬之</strong>（Director：基礎・橋渡し研究担当）</li>
+        </ul>
+      </div>
+      <div class="panel" id="research">
+        <h2>Research Focus</h2>
+        <p class="muted">間質性肺疾患、ARDS、気管支拡張症等を中心した呼吸器疾患全般と、プロテオミクス／トランスクリプトミクス、AI・データサイエンスを横断的に扱います。</p>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>Quick Links</h2>
+      <ul class="list-condensed">
+        <li><a href="#臨床研究">臨床研究</a></li>
+        <li><a href="#基礎研究">基礎研究</a></li>
+        <li><a href="#publications">業績</a></li>
+        <li><a href="#funding">Funding</a></li>
+        <li><a href="#参加施設共同研究施設">参加施設 / 共同研究施設</a></li>
+        <li><a href="#利用規約">利用規約</a></li>
+      </ul>
+    </div>
+
+    <article class="panel legacy">
+
+<h2 id="目次">目次</h2>
+<ul>
+<li><a href="#about-us">About Us</a>
+</li>
+<li><a href="#お知らせ">お知らせ</a>
+</li>
+<li><a href="#運営">運営</a>
+</li>
+<li><a href="#実施中の研究">実施中の研究</a>
+</li>
+<li><a href="#臨床研究">臨床研究</a>
+</li>
+<li><a href="#基礎研究">基礎研究</a>
+</li>
+<li><a href="#業績">業績</a>
+</li>
+<li><a href="#funding">Funding</a>
+</li>
+<li><a href="#参加施設共同研究施設">参加施設/共同研究施設</a>
+</li>
+<li><a href="#参加施設">参加施設</a>
+</li>
+<li><a href="#共同研究施設">共同研究施設</a>
+</li>
+<li><a href="#利用規約">利用規約</a>
+</li>
+<li><a href="#著作権">著作権</a>
+<br>
+------------------------------------------------------------------------<br>
+<br>
+</li>
+</ul>
+<h2 id="about-us">About Us</h2>
+<p>呼吸器とは呼吸に関わる臓器の総称で、鼻・口から始まり気道や肺などから構成されています。<br> <a href="https://www.who.int/news-room/fact-sheets/detail/the-top-10-causes-of-death" target="_blank" rel="noopener noreferrer">WHOの報告</a>では2021年の世界的死因において呼吸器疾患及び呼吸器感染症はTop 10 のうちの4つを占めています（COVID-19、COPD、下気道感染、呼吸器悪性腫瘍、結核）。これは、呼吸器疾患の研究によってより充実した生活を送ることが可能となる患者が世界的にも非常に多いことを意味します。<br> 遺伝学、免疫学、生理学、薬理学、臨床疫学、臨床試験、人工知能、データサイエンスなどの多様な分野の専門家が協力して、呼吸器疾患の研究を進めることが重要です。<br> 本研究グループは呼吸器疾患のベンチからベッドサイドまでの発展的研究を目指し、施設や国の垣根を越えて若手呼吸器内科医及び呼吸器研究者が協働・協議するためのプラットフォームを提供するために2023年に結成されました。<br> 現在、基礎研究・臨床研究を問わず積極的に研究を進めており、国内外の研究者と共同研究を行っています。</p>
+<ul>
+<li><strong>目的</strong>：呼吸器疾患研究の発展を促し、呼吸器疾患患者の健康寿命・QoL改善を目指す
+</li>
+<li><strong>活動</strong>：２週間に1回のリサーチミーティング、競争的研究費獲得、研究計画立案・実行・支援
+</li>
+<li><strong>特徴</strong>：Github を利用しオープンソースでアップデート可能な研究プラットフォームを提供
+<br>
+<strong>連絡先</strong><br>
+<br>
+</li>
+<li>基礎・橋渡し・臨床研究のご相談とオンラインリサーチミーティングの見学希望の方は<a href="mailto:syamamoto4@wisc.edu">syamamoto4@wisc.edu</a>もしくはイシューの発行をお願いします。
+</li>
+<li>製薬会社・企業の方からのお問い合わせも同上の連絡先までお願いします。
+<br>
+------------------------------------------------------------------------<br>
+<br>
+</li>
+</ul>
+<h2 id="お知らせ">お知らせ</h2>
+<ul>
+<li><strong>2025年3月</strong> Github リポジトリを公開しました
+<br>
+------------------------------------------------------------------------<br>
+<br>
+</li>
+</ul>
+<h2 id="運営">運営</h2>
+<ul>
+<li><strong>山本章太</strong>（Principal Director）
+</li>
+<li><strong>今井亮介</strong>（Director：疫学・臨床研究担当）
+</li>
+<li><strong>新津敬之</strong>（Director：基礎・橋渡し研究担当）
+<br>
+------------------------------------------------------------------------<br>
+<br>
+</li>
+</ul>
+<h2 id="実施中の研究">実施中の研究</h2>
+<h3 id="臨床研究">臨床研究</h3>
+<ul>
+<li><strong>ARDS 患者における筋炎関連/特異的抗体の病態解明</strong>（Mass General Brigham Institutional Review Board: Protocol #2022P001829）
+</li>
+<li><strong>ARDS 発症ハイリスク患者におけるARDS global definition の予後予測能</strong>（大阪大学 倫理審査委員会承認済み）
+</li>
+<li><strong>呼吸不全患者に対する至適酸素化目標値の探索：RCTのベイズ解析</strong>（PROSPERO: CRD42024604968）
+</li>
+<li><strong>IPF 患者における抗線維化薬の治療反応異質性評価</strong>（大阪大学 倫理審査委員会承認済み）
+</li>
+<li><strong>NCBEに対する抗炎症治療のNMA</strong>（PROSPERO: CRD42024605694）
+</li>
+<li><strong>生活習慣と生理学的要因が肺機能に与える影響の縦断的評価</strong>（聖路加国際大学 倫理審査委員会: 24-R137）<br>
+    （注：ARDS, Acute respiratory distress syndrome; IPF, Idiopathic pulmonary fibrosis; NCBE, Non-cystic fibrosis bronchiectasis; NMA, Network meta-analysis）<br>
+<br>
+</li>
+</ul>
+<h3 id="基礎研究">基礎研究</h3>
+<ul>
+<li><strong>肺間質における細胞外マトリックスの質的・量的変化</strong>（University of Wisconsin IACUC: M006349）
+</li>
+<li><strong>肺線維症モデルマウスにおけるTop-down/Bottom-up プロテオミクス解析（LC-MS/MS）</strong>（University of Wisconsin IACUC: M006349）
+</li>
+<li><strong>重症呼吸不全患者における末梢血を用いたマルチオミクス解析</strong>（Mass General Brigham Institutional Review Board: Protocol #2022P001829）
+</li>
+<li><strong>線維性及び嚢胞性肺疾患における空間トランスクリプトーム解析</strong>（大阪大学 倫理審査委員会承認済み）
+</li>
+<li><strong>リピドミクス解析による間質性肺疾患の病態解明（SFC/QqQMS）</strong>（国立病院機構刀根山医療センター 倫理審査委員会承認済み：TNH-R-202 0034）
+</li>
+<li><strong>プロテオミクス・トランスクリプトミクス解析ソフトウェアの開発</strong>（<a href="https://github.com/s-yamamoto-pulmonology?tab=repositories" target="_blank" rel="noopener noreferrer">Github</a>）
+<br>
+------------------------------------------------------------------------<br>
+<br>
+</li>
+</ul>
+<div id="publications"></div>
+<h2 id="業績">業績</h2>
+<h3 id="peer-reviewed-publications（5年以内、著者は6名まで記載）">Peer reviewed publications（5年以内、著者は6名まで記載）</h3>
+<ol>
+<li><strong>Yamamoto S</strong>, Wilson CL, Krueger MA, Gharib SA, Schnapp LM.<br>
+    Deficiency of the Collagen Endocytic Receptor MRC2 Accelerates Mouse Lung Fibroblast Proliferation .<br>
+    Am J Respir Cell Mol Biol. 2025 (in press).<br>
+    doi: (in press)<br>
+<br>
+</li>
+<li><strong>Niitsu T</strong>, Fukushima K, Komukai S, Yamamoto R, Shiroyama T, Nii T, et al.<br>
+    Effectiveness of antifibrotic treatment in real-world patients with progressive pulmonary fibrosis.<br>
+    Respir Med. 2025;248:108347.<br>
+    doi: <a href="https://linkinghub.elsevier.com/retrieve/pii/S095461112500410X" target="_blank" rel="noopener noreferrer">10.1016/j.rmed.2025.108347</a><br>
+<br>
+</li>
+<li><strong>Imai R</strong>, <strong>Niitsu T</strong>, Liu MY, Faust H, Schnapp LM, <strong>Yamamoto S</strong>.<br>
+    Comparison of Corticosteroid Regimens for COVID-19 and Non-COVID-19 ARDS: A Systematic Review and Dose-Response Network Meta-Analysis.<br>
+    CHEST Crit Care. 2025 (online ahead of print).<br>
+    doi: <a href="https://doi.org/10.1016/j.chstcc.2025.100207" target="_blank" rel="noopener noreferrer">10.1016/j.chstcc.2025.100207</a><br>
+<br>
+</li>
+<li><strong>Niitsu T</strong>, Kataoka T, Fukushima K, Motooka D, Shichino S, Natsume-Kitatani Y, et al.<br>
+    Spatial transcriptomics identifies SPARC as a prognostic marker in interstitial lung diseases.<br>
+    J Pathol.2025;267(1):79-91.<br>
+    doi: <a href="https://pathsocjournals.onlinelibrary.wiley.com/doi/10.1002/path.6451" target="_blank" rel="noopener noreferrer">10.1002/path.6451</a><br>
+<br>
+</li>
+<li><strong>Imai R</strong>, Bermea RS, Zhao SH, Montesi SB, Singh A, Flashner BM, et al.<br>
+    Anti-Ro52 Seropositive Interstitial Lung Disease is Associated with a Higher Risk for Disease Progression and Mortality.<br>
+    CHEST. 2025;168(4):954-966.<br>
+    doi: <a href="https://doi.org/10.1016/j.chest.2025.05.036" target="_blank" rel="noopener noreferrer">10.1016/j.chest.2025.05.036</a><br>
+<br>
+</li>
+<li>Flachner BM, <strong>Imai R</strong>, Synn AJ, Munchel JK, Hariri LP, Bermea RS, et al.<br>
+    Anti-Mi-2 positive interstitial lung disease (ILD): a progressive disease comparable to other myositis-ILD.<br>
+    Respir Med Res. 2025;13;88:101176.<br>
+    doi: <a href="https://doi.org/10.1016/j.resmer.2025.101176" target="_blank" rel="noopener noreferrer">10.1016/j.resmer.2025.101176</a><br>
+<br>
+</li>
+<li>Flachner BM, <strong>Imai R</strong>, Synn AJ, Munchel JK, Hariri LP, Bermea RS, et al.<br>
+    Progressive course of anti-nuclear matrix protein-2 (NXP-2) positive-interstitial lung disease.<br>
+    Respir Med Res. 2025;87:101170.<br>
+    doi: <a href="https://doi.org/10.1016/j.resmer.2025.101170" target="_blank" rel="noopener noreferrer">10.1016/j.resmer.2025.101170</a><br>
+<br>
+</li>
+<li><strong>Yamamoto S</strong>, Horita N, <strong>Imai R</strong>, <strong>Niitsu T</strong><br>
+    Surgical and Bronchoscopic Lung Volume Reduction for Severe Emphysema: A Systematic Review and Network Meta-analysis.<br>
+    Lung. 2025;203(1):22.<br>
+    doi: <a href="https://doi.org/10.1007/s00408-024-00777-0" target="_blank" rel="noopener noreferrer">10.1007/s00408-024-00777-0</a><br>
+<br>
+</li>
+<li><strong>Imai R</strong>, Tomishima Y, Nakamura T, Yamada D, Ro S, So C, et al.<br>
+    Prognosis of Equivocal Interstitial Lung Abnormalities in a Health Check-up Population.<br>
+    Ann Am Thorac Soc. 2025;22(3):387-394.<br>
+    doi: <a href="https://doi.org/10.1513/AnnalsATS.202408-867OC" target="_blank" rel="noopener noreferrer">10.1513/AnnalsATS.202408-867OC</a><br>
+<br>
+</li>
+<li>Nishihara M, <strong>Imai R</strong>, Ushigusa T, Nakamura T, So C, Okafuji K, et al.<br>
+    Pulmonary Sclerosing Pneumocytoma: A Case Revealed During 8-Year of Follow-up with CT imaging.<br>
+    Intern Med. 2025;64(6):893-897.<br>
+    doi: <a href="https://doi.org/10.2169/internalmedicine.3956-24" target="_blank" rel="noopener noreferrer">10.2169/internalmedicine.3956-24</a><br>
+<br>
+</li>
+<li>Nakamura T, Jinta T, Kitamura A, Tanaka M, So C, Ro S, et al.<br>
+    Differences in Tolerability of Antifibrotic Agents Between Connective Tissue Disease-Associated and Non-connective Tissue Disease-Associated Interstitial Lung Disease.<br>
+    Cureus. 2025;17(2):e78750.<br>
+    doi: <a href="https://doi.org/10.7759/cureus.78750" target="_blank" rel="noopener noreferrer">10.7759/cureus.78750</a><br>
+<br>
+</li>
+<li>Hashimoto K, Abe Y, Fukushima K, <strong>Niitsu T</strong>, Komukai S, Miyamoto S, et al.<br>
+    Epidemiology of bronchiectasis at a single center in Japan: a retrospective cohort study.<br>
+    BMC Pulm Med. 2024;24(1):531.<br>
+    doi: <a href="https://doi.org/10.1186/s12890-024-03337-7" target="_blank" rel="noopener noreferrer">10.1186/s12890-024-03337-7</a><br>
+<br>
+</li>
+<li>Horita N, <strong>Yamamoto S</strong>, Mizuki Y, Kawagoe T, Mihara T, Yamashiro T<br>
+    Minimal clinically important difference (MCID) of effect sizes other than mean difference.<br>
+    J Clin Q. 2024;1(3):116-127.<br>
+    doi: <a href="https://doi.org/10.69854/jcq.2024.0016" target="_blank" rel="noopener noreferrer">10.69854/jcq.2024.0016</a><br>
+<br>
+</li>
+<li>Tomishima Y, Kitamura A, <strong>Imai R</strong>, Ohde S.<br>
+    Deleterious impact of trivial to severe interstitial pneumonia and emphysema on mortality and acute exacerbation of interstitial pneumonia in patients with lung cancer: a retrospective cohort study.<br>
+    BMC Pulm Med. 2024;24:290.<br>
+    doi: <a href="https://doi.org/10.1186/s12890-024-03105-7" target="_blank" rel="noopener noreferrer">10.1186/s12890-024-03105-7</a><br>
+<br>
+</li>
+<li>Asao T, Shukuya T, Uemura K, Kitadai R, Yamamoto G, Mouri A, et al.<br>
+    Risk and survival of patients with non-small cell lung cancer and pre-existing autoimmune disorders receiving immune checkpoint blockade therapy: Survival analysis with inverse probability weighting from a nationwide, multi-institutional, retrospective study (NEJ047).<br>
+    Lung Cancer. 2024;194:107894.<br>
+    doi: <a href="https://doi.org/10.1016/j.lungcan.2024.107894" target="_blank" rel="noopener noreferrer">10.1016/j.lungcan.2024.107894</a><br>
+<br>
+</li>
+<li><strong>Yamamoto S</strong>, Horita N, Hara J, Sasamoto M, Kanemitsu Y, Hara Y, et al.<br>
+    Benefit-risk profile of P2X3 receptor antagonists for treatment of chronic cough: Dose-response model-based network meta-analysis.<br>
+    CHEST. 2024;166(5):1124-1140.<br>
+    doi: <a href="https://doi.org/10.1016/j.chest.2024.05.015" target="_blank" rel="noopener noreferrer">10.1016/j.chest.2024.05.015</a><br>
+<br>
+</li>
+<li>Fukushima K, Matsumoto Y, Abe Y, Hashimoto K, Motooka D, Kitada S, et al.<br>
+    Variability of macrolide-resistant profile in Mycobacterium avium complex pulmonary disease.<br>
+    Antimicrob Agents Chemother.2024;68(11):e0121324.<br>
+    doi: <a href="https://doi.org/10.1128/aac.01213-24" target="_blank" rel="noopener noreferrer">10.1128/aac.01213-24</a><br>
+<br>
+</li>
+<li>Shirasaki K, Hifumi T, Sekiguchi M, Isokawa S, Nakao Y, Tanaka S, et al.<br>
+    Long-term psychiatric disorders in families of severe COVID-19 patients.<br>
+    Acute Med Surg. 2024;11:e926.<br>
+    doi: <a href="https://doi.org/10.1002/ams2.926" target="_blank" rel="noopener noreferrer">10.1002/ams2.926</a><br>
+<br>
+</li>
+<li><strong>Niitsu T</strong>, Fukushima K, Komukai S, Takata S, Abe Y, Nii T, et al.<br>
+    Real-world impact of antifibrotics on prognosis in patients with progressive fibrosing interstitial lung disease.<br>
+    RMD Open. 2023;9(1):e002667.<br>
+    doi: <a href="https://doi.org/10.1136/rmdopen-2022-002667" target="_blank" rel="noopener noreferrer">10.1136/rmdopen-2022-002667</a><br>
+<br>
+</li>
+<li>Yamada D, <strong>Imai R</strong>, Matsusako M, Kurihara Y.<br>
+    Intravascular large B-cell lymphoma appearance on dual-energy computed tomography: a case report.<br>
+    BMC Pulm Med. 2023;23:125.<br>
+    doi: <a href="https://doi.org/10.1186/s12890-023-02420-9" target="_blank" rel="noopener noreferrer">10.1186/s12890-023-02420-9</a><br>
+<br>
+</li>
+<li>Mukai K, Tsunoda H, <strong>Imai R</strong>, Numata A, Kida K, Oba K, et al.<br>
+    The location of unilateral axillary lymphadenopathy after COVID-19 vaccination compared with that of metastasis from breast cancer without vaccination.<br>
+    Jpn J Radiol. 2023;41(6):617-624.<br>
+    doi: <a href="https://doi.org/10.1007/s11604-023-01387-1" target="_blank" rel="noopener noreferrer">10.1007/s11604-023-01387-1</a><br>
+<br>
+</li>
+<li>Shirasaki K, Hifumi T, Goto M, Shin K, Horie K, Isokawa S, et al.<br>
+    Clinical characteristics and outcomes after extracorporeal cardiopulmonary resuscitation in out-of-hospital cardiac arrest patients with an initial asystole rhythm.<br>
+    Resuscitation. 2023;183:109694.<br>
+    doi: <a href="https://doi.org/10.1016/j.resuscitation.2023.109694" target="_blank" rel="noopener noreferrer">10.1016/j.resuscitation.2023.109694</a><br>
+<br>
+</li>
+<li>Nakamura T, <strong>Imai R</strong>, Kitamura A, So C, Ro S, Okafuji K, et al.<br>
+    Investigating viral involvement in immunocompromised patients using comprehensive infectious disease testing including FilmArray Respiratory Panel 2.1 on bronchoscopy: a retrospective study.<br>
+    Cureus. 2023;15:e38820.<br>
+    doi: <a href="https://doi.org/10.7759/cureus.38820" target="_blank" rel="noopener noreferrer">10.7759/cureus.38820</a><br>
+<br>
+</li>
+<li><strong>Imai R</strong>, Kitamura A.<br>
+    Successful treatment with atezolizumab in a haemodialysis patient with large cell neuroendocrine carcinoma.<br>
+    Respir Case Rep. 2023;11(8):e01193.<br>
+    doi: <a href="https://doi.org/10.1002/rcr2.1193" target="_blank" rel="noopener noreferrer">10.1002/rcr2.1193</a><br>
+<br>
+</li>
+<li>Fukushima K, Matsumoto Y, Matsuki T, Saito H, Motooka D, Komukai S, et al.<br>
+    MGIT-seq for the Identification of Nontuberculous Mycobacteria and Drug Resistance: a Prospective Study.<br>
+    J Clin Microbiol. 2023;61(4):e0162622.<br>
+    doi: <a href="https://doi.org/10.1128/jcm.01626-22" target="_blank" rel="noopener noreferrer">10.1128/jcm.01626-22</a><br>
+<br>
+</li>
+<li>Nakamura T, <strong>Imai R</strong>, Nishimura N.<br>
+    A case of Non-small Cell Lung Cancer with Anaphylaxis after 41 Courses of Pembrolizumab along with Adrenal Insufficiency as an Immune-Related Adverse Event.<br>
+    Case Rep Oncol. 2022;15(3):804-808.<br>
+    doi: <a href="https://doi.org/10.1159/000526561" target="_blank" rel="noopener noreferrer">10.1159/000526561</a><br>
+<br>
+</li>
+<li>Nagano N, Suzuki M, <strong>Yamamoto S</strong>, Kobayashi K, Iikura M, Izumi S, et al.<br>
+    Short- and long-term efficacy of bronchial artery embolization using a gelatin sponge for the treatment of cryptogenic hemoptysis.<br>
+    Glob Health Med. 2022;4(6):315-321.<br>
+    doi: <a href="https://doi.org/10.35772/ghm.2022.01057" target="_blank" rel="noopener noreferrer">10.35772/ghm.2022.01057</a><br>
+<br>
+</li>
+<li>Matsumoto T, Endo K, <strong>Yamamoto S</strong>, Suda S, Tomita K, Kamei S, et al.<br>
+    Dose length product and outcome of CT fluoroscopy-guided interventions using a new 320-detector row CT scanner with deep-learning reconstruction and new bow-tie filter.<br>
+    Br J Radiol. 2022;20211159.<br>
+    doi: <a href="https://doi.org/10.1259/bjr.20211159" target="_blank" rel="noopener noreferrer">10.1259/bjr.20211159</a><br>
+<br>
+</li>
+<li>Kanemura H, Hayashi H, Tomida S, Tanizaki J, Suzuki S, Kawanaka Y, et al.<br>
+    The Tumor Immune Microenvironment and Frameshift Neoantigen Load Determine Response to PD-L1 Blockage in Extensive Stage Small Cell Lung Cancer.<br>
+    JTO Clin Res Rep. 2022;3:100373.<br>
+    doi: <a href="https://doi.org/10.1016/j.jtocrr.2022.100373" target="_blank" rel="noopener noreferrer">10.1016/j.jtocrr.2022.100373</a><br>
+<br>
+</li>
+<li><strong>Imai R</strong>, Yamada D, Tomishima Y, Nakamura T, So C, Ro S, et al.<br>
+    Elevated Plasma Levels of KL-6 and Geographic Appearance on HRCT are Associated with Diffuse Alveolar Damage in Autopsy Cases of Acute Respiratory Distress Syndrome.<br>
+    BMC Pulm Med. 2022;22:308.<br>
+    doi: <a href="https://doi.org/10.1186/s12890-022-02102-y" target="_blank" rel="noopener noreferrer">10.1186/s12890-022-02102-y</a><br>
+<br>
+</li>
+<li>Tamura A, <strong>Imai R</strong>, Tomishima Y, Nishimura N.<br>
+    Progressive Pulmonary Fibrosis Due to Diffuse Alveolar Damage in a COVID-19-Infected Autopsy Case.<br>
+    Respirol Case Rep. 2022;10:e0934.<br>
+    doi: <a href="https://doi.org/10.1002/rcr2.934" target="_blank" rel="noopener noreferrer">10.1002/rcr2.934</a><br>
+<br>
+</li>
+<li>Hashimoto H, <strong>Yamamoto S</strong>, Nakagawa H, Suido Y, Sato S, Tabata E, et al.<br>
+    Predictive value of computed tomography for short-term mortality in patients with acute respiratory distress syndrome: a systematic review.<br>
+    Sci Rep. 2022;12(1):9579.<br>
+    doi: <a href="https://doi.org/10.1038/s41598-022-13972-x" target="_blank" rel="noopener noreferrer">10.1038/s41598-022-13972-x</a><br>
+<br>
+</li>
+<li><strong>Yamamoto S</strong>, Sakamaki F, Takahashi G, Yuji R, Matsumoto T, Hasebe T<br>
+    Novel pulmonary perfusion imaging using chest digital dynamic radiography for pulmonary artery sarcoma.<br>
+    Respirol Case Rep. 2021;9(4):e00737.<br>
+    doi: <a href="https://doi.org/10.1002/rcr2.737" target="_blank" rel="noopener noreferrer">10.1002/rcr2.737</a><br>
+<br>
+</li>
+<li>Yamada D, Ohde S, <strong>Imai R</strong>, Ikejima K, Matsusako M, Kurihara Y.<br>
+    Visual Classification of Three Computed Tomography Lung Patterns to Predict Prognosis of COVID-19: A Retrospective Study.<br>
+    BMC Pulm Med. 2022;22:1.<br>
+    doi: <a href="https://doi.org/10.1186/s12890-021-01813-y" target="_blank" rel="noopener noreferrer">10.1186/s12890-021-01813-y</a><br>
+<br>
+</li>
+<li>Morita C, Kitamura A, Okafuji K, Ro S, <strong>Imai R</strong>, Shirasaki K, et al.<br>
+    Combined Treatment with Endobronchial Watanabe Spigot and N-butyl-2-Cyanoacrylate for Refractory Pneumothorax in COVID-19.<br>
+    Respirol Case Rep. 2022;10(4):e0923.<br>
+    doi: <a href="https://doi.org/10.1002/rcr2.923" target="_blank" rel="noopener noreferrer">10.1002/rcr2.923</a><br>
+<br>
+</li>
+<li>Kawasaki T, Takeda Y, Edahiro R, Shirai Y, Nogami-Itoh M, Matsuki T, et al.<br>
+    Next-generation proteomics of serum extracellular vesicles combined with single-cell RNA sequencing identifies MACROH2A1 associated with refractory COVID-19.<br>
+    Inflamm Regen. 2022;42(1):53.<br>
+    doi: <a href="https://doi.org/10.1186/s41232-022-00243-5" target="_blank" rel="noopener noreferrer">10.1186/s41232-022-00243-5</a><br>
+<br>
+</li>
+<li>Namkoong H, Edahiro R, Takano T, Nishihara H, Shirai Y, Sonehara K, et al.<br>
+    DOCK2 is involved in the host genetics and biology of severe COVID-19.<br>
+    Nature. 2022;609(7928):754-760.<br>
+    doi: <a href="https://doi.org/10.1038/s41586-022-05163-5" target="_blank" rel="noopener noreferrer">10.1038/s41586-022-05163-5</a><br>
+<br>
+</li>
+<li>Wang Q.S, Edahiro R, Namkoong H, Hasegawa T, Shirai Y, Sonehara K, et al.<br>
+    The whole blood transcriptional regulation landscape in 465 COVID-19 infected samples from Japan COVID-19 Task Force.<br>
+    Nat Commun. 2022;13(1):4830.<br>
+    doi: <a href="https://doi.org/10.1038/s41467-022-32276-2" target="_blank" rel="noopener noreferrer">10.1038/s41467-022-32276-2</a><br>
+<br>
+</li>
+<li>Noda Y, Shiroyama T, Masuhiro K, Amiya S, Enomoto T, Adachi Y, et al.<br>
+    Quantitative evaluation of emphysema for predicting immunotherapy response in patients with advanced non-small-cell lung cancer.<br>
+    Sci Rep. 2022;12(1):8881.<br>
+    doi: <a href="https://doi.org/10.1038/s41598-022-13131-2" target="_blank" rel="noopener noreferrer">10.1038/s41598-022-13131-2</a><br>
+<br>
+</li>
+<li>Abe Y, Fukushima K, Matsumoto Y, <strong>Niitsu T</strong>, Nabeshima H, Nagahama Y, et al.<br>
+    Mycobacterium senriense sp. nov., a slowly growing, non-scotochromogenic species, isolated from sputum of an elderly man.<br>
+    Int J Syst Evol Microbiol. 2022;72(5).<br>
+    doi: <a href="https://doi.org/10.1099/ijsem.0.005378" target="_blank" rel="noopener noreferrer">10.1099/ijsem.0.005378</a><br>
+<br>
+</li>
+<li>Maeda Y, Motooka D, Kawasaki T, Oki H, Noda Y, Adachi Y, <strong>Niitsu T</strong>, et al.<br>
+    Longitudinal alterations of the gut mycobiota and microbiota on COVID-19 severity.<br>
+    BMC Infect Dis. 2022;22(1):572.<br>
+    doi: <a href="https://doi.org/10.1186/s12879-022-07358-7" target="_blank" rel="noopener noreferrer">10.1186/s12879-022-07358-7</a><br>
+<br>
+</li>
+<li>Enomoto T, Shiroyama T, Hirata H, Amiya S, Adachi Y, <strong>Niitsu T</strong>, et al.<br>
+    COVID-19 in a human T-cell lymphotropic virus type-1 carrier.<br>
+    Clin Case Rep. 2022;10(2):e05463.<br>
+    doi: <a href="https://doi.org/10.1002/ccr3.5463" target="_blank" rel="noopener noreferrer">10.1002/ccr3.5463</a><br>
+<br>
+</li>
+<li><strong>Niitsu T</strong>, Hayashi T, Uchida J, Yanase T, Tanaka S, Kuroyama M, et al.<br>
+    Drug-Induced Kidney Injury Caused by Osimertinib: Report of a Rare Case.Nephron.<br>
+    2022;146(1):58-63.<br>
+    doi: <a href="https://doi.org/10.1159/000518774" target="_blank" rel="noopener noreferrer">10.1159/000518774</a><br>
+<br>
+</li>
+<li>Yokosuka R, <strong>Imai R</strong>, Ro S, Murakami M, Okafuji K, Kitamura A, et al.<br>
+    Pectoralis Muscle Mass on Chest CT at Admission Predicts Prognosis in Patients with Pneumonia.<br>
+    Can Respir J. 2021;2021:3396950.<br>
+    doi: <a href="https://doi.org/10.1155/2021/3396950" target="_blank" rel="noopener noreferrer">10.1155/2021/3396950</a><br>
+<br>
+</li>
+<li><strong>Imai R</strong>, Nishimura N, Takahashi O, Tamura T.<br>
+    High-Resolution Computed Tomography for the Prediction of Mortality in Acute Respiratory Distress Syndrome.<br>
+    Health Sci Rep. 2021;4:e418.<br>
+    doi: <a href="https://doi.org/10.1002/hsr2.418" target="_blank" rel="noopener noreferrer">10.1002/hsr2.418</a><br>
+<br>
+</li>
+<li><strong>Imai R</strong>, Mizuno A, Miyashita M, Okafuji K, Kitamura A, Tomishima Y, et al.<br>
+    Bereaved Family Members’ Perceived Care at the End of Life for Patients with Noncancerous Respiratory Diseases.<br>
+    Palliat Med Rep. 2021;2:265-271.<br>
+    doi: <a href="https://doi.org/10.1089/pmr.2021.0034" target="_blank" rel="noopener noreferrer">10.1089/pmr.2021.0034</a><br>
+<br>
+</li>
+<li>Shindo Y, Kondoh Y, Kada A, Doi Y, Tomii K, Mukae M, et al.<br>
+    Phase II Clinical Trial of Combination Therapy with Favipiravir and Methylprednisolone for COVID-19 with Non-Critical Respiratory Failure.<br>
+    Infect Dis Ther. 2021;8:1-17.<br>
+    doi: <a href="https://doi.org/10.1007/s40121-021-00512-9" target="_blank" rel="noopener noreferrer">10.1007/s40121-021-00512-9</a><br>
+<br>
+</li>
+<li><strong>Yamamoto S</strong>, Matsumoto T, Suda S, Tomita K, Kamei S, Hashida K, et al.<br>
+    First experience of efficacy and radiation exposure in 320-detector row CT fluoroscopy-guided interventions.<br>
+    Br J Radiol. 2021;94(1120):20200754.<br>
+    doi: <a href="https://doi.org/10.1259/bjr.20200754" target="_blank" rel="noopener noreferrer">10.1259/bjr.20200754</a><br>
+<br>
+</li>
+<li>Ro S, Nishimura N, <strong>Imai R</strong>, Tomishima Y, So C, Murakami M, et al.<br>
+    Identification of Patients with COVID-19 Who are Optimal for Methylprednisolone Pulse Therapy.<br>
+    Multidiscip Respir Med. 2021;16:781.<br>
+    doi: <a href="https://doi.org/10.4081/mrm.2021.781" target="_blank" rel="noopener noreferrer">10.4081/mrm.2021.781</a><br>
+<br>
+</li>
+<li>Kitamura A, Okafuji K, <strong>Imai R</strong>, Murakami M, Ro S, Tomishima Y, et al.<br>
+    Reproducibility of Peripheral Branches in Virtual Bronchoscopic Navigation Using VINCENT and LungPoint Software for Peripheral Lung Lesions.<br>
+    Respir Investig. 2021;59(6):772-776.<br>
+    doi: <a href="https://doi.org/10.1016/j.resinv.2021.04.006" target="_blank" rel="noopener noreferrer">10.1016/j.resinv.2021.04.006</a><br>
+<br>
+</li>
+<li>Ro S, <strong>Imai R</strong>, Kitamura A, Jinta T, Nishimura N.<br>
+    Ultrasonic Humidifier Lung as a Mimic of COVID-19.<br>
+    Respirol Case Rep. 2021;9:e00761.<br>
+    doi: <a href="https://doi.org/10.1002/rcr2.761" target="_blank" rel="noopener noreferrer">10.1002/rcr2.761</a><br>
+<br>
+</li>
+<li><strong>Imai R</strong>, Ikemura S, Jinta T.<br>
+    Anti-TIF1γ Antibody-Positive Dermatomyositis Associated with Durvalumab Administration in a Patient with Lung and Esophageal Cancers.<br>
+    Respirol Case Rep. 2021;9(4):e00736.<br>
+    doi: <a href="https://doi.org/10.1002/rcr2.736" target="_blank" rel="noopener noreferrer">10.1002/rcr2.736</a><br>
+<br>
+</li>
+<li><strong>Imai R</strong>, Ro S, Tomishima Y, Nishimura N.<br>
+    Steroid Resistance and Rebound Phenomena in Patients with COVID-19.<br>
+    Respir Investig. 2021;59(5):608-613.<br>
+    doi: <a href="https://doi.org/10.1016/j.resinv.2021.05.007" target="_blank" rel="noopener noreferrer">10.1016/j.resinv.2021.05.007</a><br>
+<br>
+</li>
+<li>Saito G, Oya Y, Taniguchi Y, Kawachi H, Fujimoto D, Matsumoto H, et al.<br>
+    Real-world survey of pneumonitis and its impact on durvalumab consolidation therapy in patients with non-small cell lung cancer who received chemoradiotherapy after durvalumab approval (HOPE-005/CRIMSON).<br>
+    Lung Cancer. 2021;161:86-93.<br>
+    doi: <a href="https://doi.org/10.1016/j.lungcan.2021.08.019" target="_blank" rel="noopener noreferrer">10.1016/j.lungcan.2021.08.019</a><br>
+<br>
+</li>
+<li>Amiya S, Hirata H, Shiroyama T, Adachi Y, <strong>Niitsu T</strong>, et al.<br>
+    Fatal cytomegalovirus pneumonia in a critically ill patient with COVID-19.<br>
+    Respirol Case Rep. 2021;9(7):e00801.<br>
+    doi: <a href="https://doi.org/10.1002/rcr2.801" target="_blank" rel="noopener noreferrer">10.1002/rcr2.801</a><br>
+<br>
+</li>
+<li>Noda Y, Shiroyama T, Amiya S, Adachi Y, Enomoto T, Hara R, et al.<br>
+    COVID-19 in a patient with sporadic lymphangioleiomyomatosis awaiting lung transplantation.<br>
+    Respir Med Case Rep. 2021;34:101505.<br>
+    doi: <a href="https://doi.org/10.1016/j.rmcr.2021.101505" target="_blank" rel="noopener noreferrer">10.1016/j.rmcr.2021.101505</a><br>
+<br>
+</li>
+<li><strong>Niitsu T</strong>, Kuge T, Fukushima K, Matsumoto Y, Abe Y, Okamoto M, et al.<br>
+    Pleural Effusion Caused by Mycolicibacterium mageritense in an Immunocompetent Host: A Case Report.<br>
+    Front Med (Lausanne). 2021;8:797171.<br>
+    doi: <a href="https://doi.org/10.3389/fmed.2021.797171" target="_blank" rel="noopener noreferrer">10.3389/fmed.2021.797171</a><br>
+<br>
+</li>
+<li><strong>Niitsu T</strong>, Shiroyama T, Hirata H, Noda Y, Adachi Y, Enomoto T, et al.<br>
+    Cytomegalovirus infection in critically ill patients with COVID-19.<br>
+    J Infect. 2021;83(4):496-522.<br>
+    doi: <a href="https://doi.org/10.1016/j.jinf.2021.07.004" target="_blank" rel="noopener noreferrer">10.1016/j.jinf.2021.07.004</a><br>
+<br>
+</li>
+<li>Adachi Y, Shiroyama T, Yamaguchi Y, Murakami T, Hirata H, Amiya S, et al.<br>
+    Predicting recurrence of respiratory failure in critically ill patients with COVID-19: A preliminary study.<br>
+    J Infect. 2021;82(5):e33-e35.<br>
+    doi: <a href="https://doi.org/10.1016/j.jinf.2021.01.016" target="_blank" rel="noopener noreferrer">10.1016/j.jinf.2021.01.016</a><br>
+<br>
+</li>
+<li>Abe Y, Suga Y, Fukushima K, Ohata H, <strong>Niitsu T</strong>, Nabeshima H, et al.<br>
+    Advances and Challenges of Antibody Therapeutics for Severe Bronchial Asthma.<br>
+    Int J Mol Sci. 2021;23(1):83.<br>
+    doi: <a href="https://doi.org/10.3390/ijms23010083" target="_blank" rel="noopener noreferrer">10.3390/ijms23010083</a><br>
+<br>
+</li>
+<li><strong>Yamamoto S</strong>, Kamei S, Tomita K, Fujita C, Endo K, Hiraiwa S, et al.<br>
+    CT-guided bone biopsy using electron density maps from dual-energy CT.<br>
+    Radiol Case Rep. 2021;16(9):2343-2346.<br>
+    doi: <a href="https://doi.org/10.1016/j.radcr.2021.06.009" target="_blank" rel="noopener noreferrer">10.1016/j.radcr.2021.06.009</a><br>
+<br>
+</li>
+<li>Takeuchi H, Morimoto K, Atsumi J, <strong>Yamamoto S</strong>, Nakagawa T, Yamada S, et al.<br>
+    Preoperative Endovascular Coil Embolisation for Chronic Pulmonary Aspergillosis.<br>
+    Int J Tuberc Lung Dis. 2021;25(9):725-731.<br>
+    doi: <a href="https://doi.org/10.5588/ijtld.21.0028" target="_blank" rel="noopener noreferrer">10.5588/ijtld.21.0028</a><br>
+<br>
+</li>
+<li>Omachi N, Ishikawa H, Hara M, Nishihara T, Yamaguchi Y, Yamamoto Y, et al.<br>
+    The impact of bronchial artery embolisation on the quality of life of patients with haemoptysis: a prospective observational study.<br>
+    Eur Radiol. 2021;31(7):5351-5360.<br>
+    doi: <a href="https://doi.org/10.1007/s00330-020-07533-x" target="_blank" rel="noopener noreferrer">10.1007/s00330-020-07533-x</a><br>
+<br>
+</li>
+<li>Konno-Yamamoto A, Narumoto O, <strong>Yamamoto S</strong>, Yamaguchi M, Motoyoshi M, Inoue Y, et al.<br>
+    Diaphragmatic hernia during treatment of lung cancer harboring an EGFR mutation.<br>
+    Oxford Med Case Rep. 2021;2021(7):omab054.<br>
+    doi: <a href="https://doi.org/10.1093/omcr/omab054" target="_blank" rel="noopener noreferrer">10.1093/omcr/omab054</a><br>
+<br>
+</li>
+<li>Hashimoto H, <strong>Yamamoto S</strong>, Nakagawa H, Suido Y, Sato S, Tabata E, et al.<br>
+    Clinical Utility of Surgical Lung Biopsy for Patients with Acute Respiratory Distress Syndrome: A Systematic Review and Meta-Analysis.<br>
+    Respiration. 2021;101(4):422-432.<br>
+    doi: <a href="https://doi.org/10.1159/000519675" target="_blank" rel="noopener noreferrer">10.1159/000519675</a><br>
+<br>
+</li>
+<li><strong>Yamamoto S</strong>, Kamei S, Kondo Y, Hiraiwa S, Hasebe T, Sakamaki F<br>
+    Bronchial artery embolization for haemothorax and haemoptysis caused by primary lung cancer.<br>
+    Respirol Case Rep. 2020;8(2):e00529.<br>
+    doi: <a href="https://doi.org/10.1002/rcr2.529" target="_blank" rel="noopener noreferrer">10.1002/rcr2.529</a><br>
+<br>
+</li>
+<li><strong>Yamamoto S</strong>, Hasebe T, Tomita K, Kamei S, Matsumoto T, Imai Y, et al.<br>
+    Pulmonary perfusion by chest digital dynamic radiography: Comparison between breath-holding and deep-breathing acquisition.<br>
+    J Appl Clin Med Phys. 2020;21(11):247-255.<br>
+    doi: <a href="https://doi.org/10.1002/acm2.13071" target="_blank" rel="noopener noreferrer">10.1002/acm2.13071</a><br>
+<br>
+</li>
+<li>Tomita K, Matsumoto T, Kamei S, <strong>Yamamoto S</strong>, Suda S, Zakoji H, et al.<br>
+    Transcatheter arterial embolization for unruptured renal angiomyolipoma using a 1.8-Fr tip microballoon catheter with a mixture of ethanol and Lipiodol.<br>
+    CVIR Endovasc. 2020;3(1):3.<br>
+    doi: <a href="https://doi.org/10.1186/s42155-019-0095-8" target="_blank" rel="noopener noreferrer">10.1186/s42155-019-0095-8</a><br>
+<br>
+</li>
+<li>Takeuchi H, Matsumoto T, Morimoto K, Osawa T, Tanaka Y, Yoshimori K, et al.<br>
+    Detection of Shunting Into Pulmonary Artery on Multidetector Row Computed Tomography Arteriography Before Bronchial Arterial Embolization: A Preliminary Study.<br>
+    J Comput Assist Tomogr. 2020;44(6):852-856.<br>
+    doi: <a href="https://doi.org/10.1097/rct.0000000000001099" target="_blank" rel="noopener noreferrer">10.1097/rct.0000000000001099</a><br>
+<br>
+</li>
+<li>Takeda K, Kawashima M, Masuda K, Kimura Y, <strong>Yamamoto S</strong>, Enomoto Y, et al.<br>
+    Long-Term Outcomes of Bronchial Artery Embolization for Patients with Non-Mycobacterial Non-Fungal Infection Bronchiectasis.<br>
+    Respiration. 2020;99(11):961-969.<br>
+    doi: <a href="https://doi.org/10.1159/000511132" target="_blank" rel="noopener noreferrer">10.1159/000511132</a><br>
+<br>
+</li>
+<li><strong>Niitsu T</strong>, Shiroyama T, Miyake K, Noda Y, Kido K, Hara R, et al.<br>
+    Combined small cell lung carcinoma harboring ALK rearrangement: A case report and literature review.<br>
+    Thorac Cancer. 2020;11(12):3625-3630.<br>
+    doi: <a href="https://doi.org/10.1111/1759-7714.13716" target="_blank" rel="noopener noreferrer">10.1111/1759-7714.13716</a><br>
+<br>
+</li>
+<li>Konno-Yamamoto A, <strong>Yamamoto S</strong>, Suzuki J, Fukami T, Kitani M, Matsui H<br>
+    Migrated coil expectorated 12 years after embolization of pulmonary arteriovenous malformation, due probably to abscess formation around the coil.<br>
+    Respir Med Case Rep. 2020;31:101245.<br>
+    doi: <a href="https://doi.org/10.1016/j.rmcr.2020.101245" target="_blank" rel="noopener noreferrer">10.1016/j.rmcr.2020.101245</a><br>
+<br>
+</li>
+<li>Kadota N, Murakami M, <strong>Imai R</strong>, Jinta T, Tamura T.<br>
+    Unilateral Pleural Effusion with Capillary Haemangioma.<br>
+    Respirol Case Rep. 2020;8(6):e00613.<br>
+    doi: <a href="https://doi.org/10.1002/rcr2.613" target="_blank" rel="noopener noreferrer">10.1002/rcr2.613</a><br>
+<br>
+</li>
+<li>So C, Ro S, Murakami M, <strong>Imai R</strong>, Jinta T.<br>
+    High-Dose, Short-Term Corticosteroids for ARDS Caused by COVID-19: A Case Series.<br>
+    Respirol Case Rep. 2020;8(6):e00596.<br>
+    doi: <a href="https://doi.org/10.1002/rcr2.596" target="_blank" rel="noopener noreferrer">10.1002/rcr2.596</a><br>
+<br>
+</li>
+<li>Hibino Y, <strong>Imai R</strong>, Jinta T.<br>
+    Diffuse Large B-Cell Lymphoma Presenting with Cavitary Lung Disease.<br>
+    Respirol Case Rep. 2020;8(5):e00584.<br>
+    doi: <a href="https://doi.org/10.1002/rcr2.584" target="_blank" rel="noopener noreferrer">10.1002/rcr2.584</a><br>
+<br>
+</li>
+<li>Ro S, <strong>Imai R</strong>, Tamura T.<br>
+    Efficacy of Tacrolimus for Bleomycin-induced Lung Injury.<br>
+    QJM. 2020;113(11):807-808.<br>
+    doi: <a href="https://doi.org/10.1093/qjmed/hcaa111" target="_blank" rel="noopener noreferrer">10.1093/qjmed/hcaa111</a><br>
+<br>
+</li>
+<li><strong>Imai R</strong>, Tomishima Y.<br>
+    Left Ventricular Dysfunction in an Idiopathic Pulmonary Fibrosis Patient on Nintedanib.<br>
+    Respirol Case Rep. 2020;8(2):e00533.<br>
+    doi: <a href="https://doi.org/10.1002/rcr2.533" target="_blank" rel="noopener noreferrer">10.1002/rcr2.533</a><br>
+<br>
+</li>
+</ol>
+<h3 id="peer-reviewed-publications（5年以前、著者は6名まで記載）">Peer reviewed publications（5年以前、著者は6名まで記載）</h3>
+<ol>
+<li><strong>Yamamoto S</strong>, Iikura M, Kakuwa T, Tsujimoto Y, Matsubayashi S, Nagano N, et al.<br>
+    Can the Number of Radiofrequency Activations Predict Serious Adverse Events after Bronchial Thermoplasty? A Retrospective Case-Control Study.<br>
+    Pulm Ther. 2019;5(2):221-233.<br>
+    doi: <a href="https://doi.org/10.1007/s41030-019-00103-7" target="_blank" rel="noopener noreferrer">10.1007/s41030-019-00103-7</a><br>
+<br>
+</li>
+<li><strong>Imai R</strong>, Tsugitomi R, Nakaoka H, Jinta T, Tamura T.<br>
+    Non-Invasive Oxygenation Strategies for Acute Exacerbation of Interstitial Lung Disease: A Retrospective Single-Center Study and a Review of the Literature.<br>
+    Clin Pulm Med. 2019;26(3):87-91.<br>
+    doi: <a href="https://doi.org/10.1097/CPM.0000000000000312" target="_blank" rel="noopener noreferrer">10.1097/CPM.0000000000000312</a><br>
+<br>
+</li>
+<li>So C, <strong>Imai R</strong>, Tomishima Y, Nishimura N.<br>
+    Bilateral Pleuritis as the Initial Symptom of Systemic Lupus Erythematosus: A Case Series and Literature Review.<br>
+    Intern Med. 2019;58(11):1617-1620.<br>
+    doi: <a href="https://doi.org/10.2169/internalmedicine.1886-18" target="_blank" rel="noopener noreferrer">10.2169/internalmedicine.1886-18</a><br>
+<br>
+</li>
+<li><strong>Imai R</strong>, Ono M, Nishimura N, Suzuki K, Komiyama N, Tamura T.<br>
+    Fulminant Myocarditis Caused by an Immune Checkpoint Inhibitor: A Case Report with Pathologic Findings.<br>
+    J Thorac Oncol. 2019;14(2):e36-e38.<br>
+    doi: <a href="https://doi.org/10.1016/j.jtho.2018.10.156" target="_blank" rel="noopener noreferrer">10.1016/j.jtho.2018.10.156</a><br>
+<br>
+</li>
+<li><strong>Imai R</strong>, Nakatani R, Nakaoka H, Tomishima Y, Jinta T, Chonabayashi N, et al.<br>
+    Yellow Nail Syndrome Patients with Diffuse Panbronchiolitis-like Pulmonary Manifestation: Two Case Reports.<br>
+    Intern Med. 2019;58(4):553-556.<br>
+    doi: <a href="https://doi.org/10.2169/internalmedicine.1466-18" target="_blank" rel="noopener noreferrer">10.2169/internalmedicine.1466-18</a><br>
+<br>
+</li>
+<li><strong>Imai R</strong>, Jinta T.<br>
+    Organizing Pneumonia in Rheumatoid Arthritis with Progression to Usual Interstitial Pneumonia.<br>
+    QJM. 2019;112(1):37-38.<br>
+    doi: <a href="https://doi.org/10.1093/qjmed/hcy230" target="_blank" rel="noopener noreferrer">10.1093/qjmed/hcy230</a><br>
+<br>
+</li>
+<li>Iikura M, Hojo M, Nagano N, Sakamoto K, Kobayashi K, <strong>Yamamoto S</strong>, et al.<br>
+    Bronchial thermoplasty for severe uncontrolled asthma in Japan.<br>
+    Allergol Int. 2018;67(2):273-275.<br>
+    doi: <a href="https://doi.org/10.1016/j.alit.2017.07.006" target="_blank" rel="noopener noreferrer">10.1016/j.alit.2017.07.006</a><br>
+<br>
+</li>
+<li>Kawamoto H, Suzuki M, Shiozawa A, Miyawaki E, <strong>Yamamoto S</strong>, Kobayashi K, et al.<br>
+    Massive Hemoptysis with a Fungus Ball-like Shadow in an Old Tuberculosis Cavity That Was Shown to Be a Clot by Bronchoscopy.<br>
+    Intern Med. 2018;57(3):377-381.<br>
+    doi: <a href="https://doi.org/10.2169/internalmedicine.8967-17" target="_blank" rel="noopener noreferrer">10.2169/internalmedicine.8967-17</a><br>
+<br>
+</li>
+<li>Kobayashi K, Suzuki M, <strong>Yamamoto S</strong>, Ueno K, Miyawaki E, Takazawa I, et al.<br>
+    Early-onset, Severe Chronic Obstructive Pulmonary Disease with Pulmonary Hypertension that was Likely Induced by Toluene Exposure.<br>
+    Intern Med. 2017;56(17):2329-2334.<br>
+    doi: <a href="https://doi.org/10.2169/internalmedicine.8077-16" target="_blank" rel="noopener noreferrer">10.2169/internalmedicine.8077-16</a><br>
+<br>
+</li>
+<li><strong>Imai R</strong>, Higuchi T, Morimoto M, Koyamada R, Okada S.<br>
+    Iron Deficiency Anemia Due to the Long-term Use of a Proton Pump Inhibitor.<br>
+    Intern Med. 2017;57(6):899-901.<br>
+    doi: <a href="https://doi.org/10.2169/internalmedicine.9554-17" target="_blank" rel="noopener noreferrer">10.2169/internalmedicine.9554-17</a><br>
+<br>
+</li>
+</ol>
+<h3 id="review-articleseditorialscorrespondences">Review articles/Editorials/Correspondences</h3>
+<ol>
+<li><strong>Imai R</strong>, Fukui S, Inoue K<br>
+    Pirfenidone and lung cancer in idiopathic pulmonary fibrosis: mind the index date, detection bias, and competing risks.<br>
+    Eur Respir J. 2025;66(3):2500453.<br>
+    doi: <a href="https://doi.org/10.1183/13993003.00453-2025" target="_blank" rel="noopener noreferrer">10.1183/13993003.00453-2025</a><br>
+<br>
+</li>
+<li><strong>Yamamoto S</strong>, <strong>Imai R</strong>, <strong>Niitsu T</strong><br>
+    CRP-Guided Treatment in Pneumonia: Charting a Personalized Approach.<br>
+    Lancet Respir Med. 2025;13(5)e24.<br>
+    doi: <a href="https://doi.org/10.1016/S2213-2600(25" target="_blank" rel="noopener noreferrer">10.1016/S2213-2600(25)00095-5</a>00095-5)<br>
+<br>
+</li>
+<li><strong>Yamamoto S</strong>, Ishikawa H, Takeda K, Kawashima M<br>
+    Sputum colour matters: haemoptysis in a bronchiectasis registry.<br>
+    Eur Respir J. 2024;64(2): 2400745.<br>
+    doi: <a href="https://doi.org/10.1183/13993003.00745-2024" target="_blank" rel="noopener noreferrer">10.1183/13993003.00745-2024</a><br>
+<br>
+</li>
+<li><strong>Yamamoto S</strong>, Ichita C<br>
+    Potential of Muscle Mass Evaluation for Prognostic Prediction of COVID-19.<br>
+    Chest. 2024;165(3):e86-e87.<br>
+    doi: <a href="https://doi.org/10.1016/j.chest.2023.09.036" target="_blank" rel="noopener noreferrer">10.1016/j.chest.2023.09.036</a><br>
+<br>
+</li>
+<li>Nabeshima H, <strong>Niitsu T</strong>, Fukushima K, Kida H<br>
+    Invariant natural killer T cells and iron metabolism orchestrate skin development and homeostasis.<br>
+    Cell Mol Immunol. 2023;20(10):1095-1097.<br>
+    doi: <a href="https://doi.org/10.1038/s41423-023-01016-x" target="_blank" rel="noopener noreferrer">10.1038/s41423-023-01016-x</a><br>
+<br>
+</li>
+<li><strong>Yamamoto S</strong>, Sakamaki F<br>
+    Potential of dynamic chest radiography for preoperative evaluation of pleural adhesions.<br>
+    J Thorac Dis. 2023;15(10):5278-5281.<br>
+    doi: <a href="https://doi.org/10.21037/jtd-23-1192" target="_blank" rel="noopener noreferrer">10.21037/jtd-23-1192</a><br>
+<br>
+------------------------------------------------------------------------<br>
+<br>
+</li>
+</ol>
+<h2 id="funding">Funding</h2>
+<ul>
+<li><strong>日本学術振興会 科学研究費助成事業（科研費） 若手研究</strong><br>
+    山本章太 | 2019−2022 | 課題番号19K17179<br>
+</li>
+<li><strong>日本学術振興会 科学研究費助成事業（科研費） 基盤C研究</strong><br>
+    山本章太 | 2021−2023 | 課題番号21K08910<br>
+</li>
+<li><strong>日本学術振興会 海外特別研究員</strong><br>
+    山本章太 | 2023−2025<br>
+</li>
+<li><strong>国立研究開発法人 科学技術振興機構 ACT-X</strong><br>
+    新津敬之 | 2025−2027 | Grant Number JPMJAX242F<br>
+</li>
+<li><strong>公益財団法人 上原記念生命科学財団 海外留学助成金Ⅰ</strong><br>
+    今井亮介 | 2025−2026<br>
+</li>
+<li><strong>公益財団法人 大阪難病研究財団　医学研究助成</strong><br>
+    新津敬之 | 2023−2024 | Grant Number 29-1-32<br>
+</li>
+<li><strong>大阪大学国際医工情報センター（MEIセンター） MDDグラント2023</strong><br>
+    新津敬之 | 2023−2024<br>
+</li>
+<li><strong>公益財団法人 大阪難病研究財団　医学研究助成</strong><br>
+    新津敬之 | 2024−2025 | Grant Number 30-2-37<br>
+</li>
+<li><strong>University of Wisconsin-Madison, Academic Discretionary Funds</strong><br>
+    Shota Yamamoto | 2023−2024 | Funding No. 233-534285-4-AAJ4193<br>
+</li>
+<li><strong>Wisconsin Partnership Program, Collaborative Health Science Program Grant</strong><br>
+    Shota Yamamoto | 2024−2028 | Grant ID 6116<br>
+</li>
+<li><strong>University of Wisconsin-Madison, Academic Discretionary Funds</strong><br>
+    Shota Yamamoto | 2024−2025 | Funding No. 233-534285-5-ABJ3993<br>
+<br>
+------------------------------------------------------------------------<br>
+<br>
+</li>
+</ul>
+<div id="institutions"></div>
+<h2 id="参加施設共同研究施設">参加施設/共同研究施設</h2>
+<h3 id="参加施設">参加施設</h3>
+<ul>
+<li>University of Wisconsin-Madison APCC
+</li>
+<li>聖路加国際病院 呼吸器内科
+</li>
+<li>Massachusetts General Hospital 呼吸器内科
+</li>
+<li>大阪大学 呼吸器内科
+</li>
+<li>独立行政法人国立病院機構 大阪刀根山医療センター 呼吸器内科
+</li>
+<li>地方独立行政法人大阪府立病院機構 大阪急性期・総合医療センター 呼吸器内科
+<br>
+</li>
+</ul>
+<h3 id="共同研究施設">共同研究施設</h3>
+<ul>
+<li>横浜市立大学
+</li>
+<li>長崎大学
+</li>
+<li>名古屋市立大学
+</li>
+<li>金沢大学
+</li>
+<li>福島県立医科大学
+</li>
+<li>国立国際医療研究センター
+</li>
+<li>国立病院機構東京病院
+</li>
+<li>神奈川県立循環器呼吸器病センター
+</li>
+<li>国立病院機構大阪刀根山医療センター
+</li>
+<li>公益財団法人結核予防会 複十字病院
+</li>
+<li>Harvard Medical School
+</li>
+<li>University of North Carolina-Chapel Hill
+</li>
+<li>Mayo Clinic
+</li>
+<li>University of Washington
+</li>
+<li>University of Bristol
+<br>
+------------------------------------------------------------------------<br>
+<br>
+</li>
+</ul>
+<h2 id="利用規約">利用規約</h2>
+<h3 id="注意事項">注意事項</h3>
+<ul>
+<li>お互いに敬意を持ったコミュニケーションをお願いします。
+</li>
+<li>建設的な議論を心がけてください。
+</li>
+<li>わかりやすく簡潔な表現をお願いします。
+</li>
+<li>情報を共有するときは、信頼性のあるデータや引用元に基づいていることを示してください。
+</li>
+<li>議論をするときは適切なイシューやプルリクエストで議論してください。
+</li>
+<li>注意事項に反して健全な議論が行われていないと判断した場合、一時的に当該スレッドのインタラクションを制限することがあります。
+<br>
+</li>
+</ul>
+<h3 id="禁止事項">禁止事項</h3>
+<ul>
+<li>個人攻撃や誹謗中傷
+</li>
+<li>差別的な発言
+</li>
+<li>ハラスメント
+</li>
+<li>スパム・広告の投稿
+</li>
+<li>プライバシーの侵害
+</li>
+<li>著作権の侵害
+</li>
+<li>法令違反
+</li>
+<li>その他公共の科学的議論の場にふさわしくない行為
+</li>
+<li>上記に該当する行為が見受けられた場合、運営委員が削除することがあります。
+<br>
+------------------------------------------------------------------------<br>
+<br>
+</li>
+</ul>
+<h2 id="著作権">著作権</h2>
+<p>本リポジトリは MIT License の下で公開されています。すべての貢献は、同一の条件の下でライセンスされるものとします。<br> 詳細は<a href="https://mit-license.org" target="_blank" rel="noopener noreferrer">こちら</a>をご覧ください。</p>
+<p>著作権者（山本章太）のクレジットを表示すること、およびライセンスへのリンクを提供することを条件に、営利・非営利での複製・再配布・翻案・改変が可能です。<br> また、本リポジトリの内容を利用する際は、著作権者への連絡をお願いいたします。</p>
+<p>貢献者の著作権者表記につきましては、当リポジトリへのコミットログ等をもって代えさせていただきます。</p>
+    </article>
+  </main>
+
+  <footer>
+    <strong>JPRN | Japan Pulmonary Research Network</strong><br>
+    Stay connected: <a href="mailto:syamamoto4@wisc.edu">syamamoto4@wisc.edu</a>
+  </footer>
+</body>
+</html>
