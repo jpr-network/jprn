@@ -36,6 +36,7 @@
       background: var(--bg);
       line-height: 1.75;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
 
     a { color: var(--accent); text-decoration: none; }
@@ -318,8 +319,94 @@
     }
 
     @media (max-width: 600px) {
-      .hero-inner { padding-top: 2.5rem; }
-      .panel { padding: 1.2rem; }
+      .topbar-inner,
+      .hero-inner,
+      main,
+      footer {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+
+      .topbar-inner {
+        width: 100%;
+        min-width: 0;
+      }
+
+      .brand {
+        font-size: 0.92rem;
+        line-height: 1.35;
+      }
+
+      nav {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+      }
+
+      nav ul {
+        width: max-content;
+        flex-wrap: nowrap;
+        padding-bottom: 0.15rem;
+      }
+
+      .hero-inner {
+        padding-top: 2.25rem;
+        padding-bottom: 2.25rem;
+      }
+
+      .hero h1 {
+        margin-top: 0.7rem;
+        font-size: clamp(1.75rem, 7.3vw, 2rem);
+        line-height: 1.4;
+        word-break: keep-all;
+      }
+
+      .hero p { font-size: 0.96rem; }
+
+      .document-meta {
+        gap: 0.5rem;
+        margin-top: 1rem;
+      }
+
+      .meta-item {
+        padding: 0.35rem 0.65rem;
+        font-size: 0.8rem;
+      }
+
+      main {
+        padding-top: 1.25rem;
+        padding-bottom: 2.5rem;
+        gap: 1rem;
+        min-width: 0;
+      }
+
+      .panel {
+        padding: 1rem;
+        border-radius: 12px;
+        min-width: 0;
+      }
+
+      .summary-card,
+      .table-wrap { min-width: 0; max-width: 100%; }
+
+      .panel h2 { font-size: 1.25rem; }
+      .panel h3 { font-size: 1rem; }
+
+      .article-section h2 { display: block; }
+
+      .article-number {
+        display: block;
+        margin-bottom: 0.2rem;
+      }
+
+      .policy-list { padding-left: 1.2rem; }
+
+      th,
+      td { padding: 0.75rem; }
+
       .timeline li { grid-template-columns: 1fr; gap: 0.15rem; }
     }
   </style>
@@ -344,7 +431,7 @@
   <section class="hero">
     <div class="hero-inner">
       <span class="chip">Membership Policy</span>
-      <h1>JPRN 運営メンバーおよび<br>コラボレーター規約</h1>
+      <h1>JPRN 運営メンバーおよび<wbr>コラボレーター規約</h1>
       <p>運営メンバーとコラボレーターの地位、責務、情報アクセス、著者資格、登録、異動および脱退に関する基本事項を定めます。</p>
       <div class="document-meta" aria-label="文書情報">
         <span class="meta-item">文書版 Ver. 1.1</span>

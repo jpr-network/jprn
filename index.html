@@ -10,7 +10,7 @@
   <meta property="og:description" content="呼吸器疾患の基礎・臨床研究を推進するネットワーク。研究実績、参加施設、最新情報を掲載。">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ja_JP">
-  <meta property="og:image" content="https://example.com/image/JPRN_logo_wide.jpg">
+  <meta property="og:image" content="https://example.com/image/JPRN_logo_wide.png">
   <meta property="og:url" content="https://example.com/">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,6 +37,7 @@
       background: var(--bg);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
     a { color: var(--accent); text-decoration: none; }
     a:hover { color: var(--accent-2); }
@@ -85,12 +86,12 @@
     .hero-inner {
       max-width: var(--max-width);
       margin: 0 auto;
-      padding: 3rem 1.5rem 2.5rem;
-      min-height: 380px;
+      padding: 3.5rem 1.5rem 3rem;
+      min-height: 400px;
       position: relative;
       display: grid;
-      grid-template-columns: minmax(0, 1.5fr) minmax(300px, 0.65fr);
-      gap: 1.5rem;
+      grid-template-columns: minmax(0, 1.55fr) minmax(280px, 0.62fr);
+      gap: clamp(2rem, 5vw, 4.5rem);
       align-items: center;
     }
     .hero-copy {
@@ -104,13 +105,15 @@
     }
     .hero-title-ja {
       display: block;
-      font-size: clamp(2rem, 3.1vw, 2.65rem);
+      font-size: clamp(2rem, 3.05vw, 2.6rem);
+      letter-spacing: -0.035em;
       white-space: nowrap;
     }
     .hero-title-en {
       display: block;
-      margin-top: 0.3rem;
-      font-size: clamp(1.5rem, 2.35vw, 2rem);
+      margin-top: 0.4rem;
+      font-size: clamp(1.25rem, 2vw, 1.65rem);
+      letter-spacing: -0.025em;
       white-space: nowrap;
     }
     .hero p { max-width: 700px; color: var(--muted); margin: 0 0 1rem; }
@@ -144,19 +147,36 @@
     }
     .btn.primary { background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%); color: #fff; }
     .btn.secondary { background: #fff; border-color: var(--border); color: var(--text); }
-    .hero figure {
+    .hero-logo {
+      position: relative;
       z-index: 1;
       width: 100%;
       margin: 0;
-      padding: 1rem 0;
+      padding: clamp(1.35rem, 3vw, 2rem);
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      border-radius: 24px;
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.88), rgba(239, 246, 255, 0.68));
+      box-shadow: 0 24px 60px rgba(37, 99, 235, 0.12), inset 0 0 0 1px rgba(37, 99, 235, 0.06);
+      backdrop-filter: blur(14px);
       pointer-events: none;
     }
-    .hero img {
+    .hero-logo::before {
+      content: "";
+      position: absolute;
+      width: 9rem;
+      height: 9rem;
+      right: -3rem;
+      top: -4rem;
+      border-radius: 50%;
+      background: rgba(14, 165, 233, 0.15);
+      filter: blur(4px);
+    }
+    .hero-logo img {
+      position: relative;
       width: 100%;
       display: block;
-      filter: grayscale(100%) contrast(150%);
-      mix-blend-mode: multiply;
-      opacity: 0.38;
+      opacity: 0.88;
     }
     main {
       max-width: var(--max-width);
@@ -185,12 +205,32 @@
       color: var(--muted);
     }
     @media (max-width: 880px) {
-      .hero-inner { min-height: 0; grid-template-columns: 1fr; gap: 1rem; }
+      .hero-inner { min-height: 0; grid-template-columns: 1fr; gap: 1.75rem; }
       .hero-title-ja, .hero-title-en { white-space: normal; }
-      .hero figure { width: min(76%, 460px); justify-self: center; padding: 0.5rem; }
-      .hero img { opacity: 0.32; }
+      .hero-logo { width: min(100%, 520px); justify-self: center; }
       nav ul { gap: 0.6rem; flex-wrap: wrap; }
       .topbar-inner { flex-direction: column; align-items: flex-start; gap: 0.4rem; }
+    }
+    @media (max-width: 600px) {
+      .topbar-inner, .hero-inner, main, footer { padding-left: 1rem; padding-right: 1rem; }
+      .topbar-inner { width: 100%; min-width: 0; }
+      .brand { font-size: 0.92rem; line-height: 1.35; }
+      nav {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      nav ul { width: max-content; flex-wrap: nowrap; padding-bottom: 0.15rem; }
+      .hero-inner { padding-top: 2.25rem; padding-bottom: 2.25rem; }
+      .hero-title-ja {
+        font-size: clamp(1.7rem, 7vw, 2rem);
+        line-height: 1.4;
+        word-break: keep-all;
+      }
+      .hero-title-en { font-size: clamp(1.18rem, 5.6vw, 1.5rem); }
+      .hero-logo { padding: 1.25rem; border-radius: 18px; }
     }
   </style>
 </head>
@@ -215,15 +255,15 @@
     <div class="hero-inner">
       <div class="hero-copy">
         <span class="chip">呼吸器疾患 × 研究ネットワーク</span>
-        <h1><span class="hero-title-ja">日本呼吸器疾患研究ネットワーク</span><span class="hero-title-en">Japan Pulmonary Research Network (JPRN)</span></h1>
+        <h1><span class="hero-title-ja">日本呼吸器疾患研究<wbr>ネットワーク</span><span class="hero-title-en">Japan Pulmonary Research Network (JPRN)</span></h1>
         <p>呼吸器疾患の基礎・臨床研究を橋渡しし、若手研究者が協働するためのオープンプラットフォーム。ベンチからベッドサイドへ、国内外の施設と連携して研究を推進します。</p>
         <div class="cta">
           <a class="btn primary" href="mailto:yamamoto5@wisc.edu">お問い合わせ</a>
           <a class="btn secondary" href="#about-us">概要を見る</a>
         </div>
       </div>
-      <figure aria-hidden="true">
-        <img src="./image/JPRN_logo_wide.jpg" alt="">
+      <figure class="hero-logo" aria-hidden="true">
+        <img src="./image/JPRN_logo_wide.png" alt="">
       </figure>
     </div>
   </section>
@@ -330,7 +370,7 @@
 <strong>連絡先</strong><br>
 <br>
 </li>
-<li>基礎・橋渡し・臨床研究のご相談とオンラインリサーチミーティングの見学希望の方は<a href="mailto:yamamoto5@wisc.edu">yamamoto5@wisc.edu</a>もしくはイシューの発行をお願いします。
+<li>基礎・橋渡し・臨床研究のご相談とオンラインリサーチミーティングの見学希望の方は<a href="mailto:yamamoto5@wisc.edu">yamamoto5@wisc.edu</a>までご連絡ください。
 </li>
 <li>製薬会社・企業の方からのお問い合わせも同上の連絡先までお願いします。
 <br>
