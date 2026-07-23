@@ -64,7 +64,7 @@ form.addEventListener("submit", async (event) => {
     });
 
     form.reset();
-    updateStatus("送信されました。入力いただいたメールアドレスへ内容のコピーを送ります。", "success");
+    updateStatus("送信されました。入力いただいたメールアドレスへ内容のコピーを送ります。\nもし内容のコピーが届かない場合は、迷惑メールフォルダとご記載いただいたメールアドレスの確認をお願いします。", "success");
   } catch (error) {
     updateStatus("送信できませんでした。通信環境をご確認のうえ、時間をおいて再度お試しください。", "error");
   } finally {
