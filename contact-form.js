@@ -9,9 +9,22 @@ const inquiryLabels = {
   other: "その他"
 };
 
-function updateStatus(message, type) {
-  statusMessage.textContent = message;
+function updateStatus(message, type, detail = "") {
+  statusMessage.replaceChildren();
   statusMessage.className = `form-status ${type}`;
+
+  if (message) {
+    const primaryMessage = document.createElement("span");
+    primaryMessage.textContent = message;
+    statusMessage.append(primaryMessage);
+  }
+
+  if (detail) {
+    const detailMessage = document.createElement("span");
+    detailMessage.className = "form-status-detail";
+    detailMessage.textContent = detail;
+    statusMessage.append(detailMessage);
+  }
 }
 
 form.addEventListener("submit", async (event) => {
@@ -64,7 +77,11 @@ form.addEventListener("submit", async (event) => {
     });
 
     form.reset();
-    updateStatus("送信されました。入力いただいたメールアドレスへ内容のコピーを送ります。\nもし内容のコピーが届かない場合は、迷惑メールフォルダとご記載いただいたメールアドレスの確認をお願いします。", "success");
+    updateStatus(
+      "送信されました。入力いただいたメールアドレスへ内容のコピーを送ります。",
+      "success",
+      "もし内容のコピーが届かない場合は、迷惑メールフォルダとご記載いただいたメールアドレスの確認をお願いします。"
+    );
   } catch (error) {
     updateStatus("送信できませんでした。通信環境をご確認のうえ、時間をおいて再度お試しください。", "error");
   } finally {
